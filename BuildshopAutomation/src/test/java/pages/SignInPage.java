@@ -1,4 +1,4 @@
-package page;
+package com.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,33 +7,28 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SignInPage 
 {
-	@FindBy(xpath="//input[contains(@id,'UserName')]/following-sibling::input")
-	private WebElement username;
-	
-	@FindBy(xpath= "//input[contains(@id,'Password')]/following-sibling::input")
-	private WebElement password;
-	
-	@FindBy(id="ctl00_ContentPlaceHolder1_Login101_Submit2")
-	private WebElement signin;
+public WebDriver driver;
 	
 	public SignInPage(WebDriver driver)
 	{
+		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void enterUsername()
-	{
-		username.sendKeys("Bill Thomas");
-	}
+	@FindBy(xpath="(//input[@class='txt-sign-in'])[2]")
+	private WebElement un;
 	
-	public void enterPassword()
-	{
-		password.sendKeys("Bill1234");
-	}
+	@FindBy(xpath="(//input[@class='txt-sign-in'])[4]")
+	private WebElement pw;
 	
-	public void clickSignIn()
-	{
-		signin.click();
-	}
+	@FindBy(xpath="//input[@id='ctl00_ContentPlaceHolder1_Login101_Submit2']")
+	private WebElement signinButton;
 	
+	public void SignInMethod()
+	{
+		un.sendKeys("Bill Thomas");
+		pw.sendKeys("Bill1234");
+		signinButton.click();
+	}
+
 }
