@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
-public class MyEventListener implements WebDriverEventListener {
+public  class MyEventListener implements WebDriverEventListener {
 
 	public void beforeNavigateTo(String url, WebDriver driver) {
 		// TODO Auto-generated method stub

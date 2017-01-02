@@ -16,6 +16,16 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.Properties;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+
 import org.apache.commons.io.FileUtils;
 import org.eclipse.jetty.websocket.api.Session;
 import org.openqa.selenium.io.Zip;
@@ -189,7 +199,9 @@ public class BackUp {
 	        	System.err.println("-----------------------------------------------------------------------------------------------------------------------------");
 				System.err.println("Please Check The Configuration Excel file under config folder and make sure to fill all the fields in Email_Settings sheet");
 				System.err.println("-----------------------------------------------------------------------------------------------------------------------------");
-				System.exit(0);
+				System.exit(0
+						
+						);
 	        }
 	}
 	
