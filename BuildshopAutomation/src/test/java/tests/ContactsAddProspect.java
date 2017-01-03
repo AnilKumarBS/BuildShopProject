@@ -1,11 +1,11 @@
-package com.tests;
+package tests;
 
 import org.testng.annotations.Test;
 
-import com.pages.Contacts;
-import com.pages.ContactsProspects;
-import com.pages.MainPage;
-import com.pages.SignInPage;
+import pages.Contacts;
+import pages.ContactsProspects;
+import pages.MainPage;
+import pages.SignInPage;
 
 public class ContactsAddProspect extends BaseClass
 {

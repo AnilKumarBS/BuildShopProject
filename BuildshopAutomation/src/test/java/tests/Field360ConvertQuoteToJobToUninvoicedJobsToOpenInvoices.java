@@ -1,11 +1,11 @@
-package com.tests;
+package tests;
 
 import org.testng.annotations.Test;
 
-import com.pages.Field360Quotes;
-import com.pages.HomePage;
-import com.pages.MainPage;
-import com.pages.SignInPage;
+import pages.Field360Quotes;
+import pages.HomePage;
+import pages.MainPage;
+import pages.SignInPage;
 
 public class Field360ConvertQuoteToJobToUninvoicedJobsToOpenInvoices extends BaseClass 
 {
