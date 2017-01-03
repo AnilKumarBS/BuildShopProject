@@ -5,21 +5,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage 
+public class SchedulePage
 {
 public WebDriver driver;
     
-    public HomePage(WebDriver driver)
+    public SchedulePage(WebDriver driver)
     {
         this.driver=driver;
         PageFactory.initElements(driver, this);
     }
-    @FindBy(xpath="//a[text()='Manage']")
-    public WebElement manage;    
+    @FindBy(xpath="//a[text()='Schedule']")
+    public WebElement schedule;    
      
-    public void HomePageMethod() throws InterruptedException
+    public void ScheduleMethod() throws InterruptedException
     {
-    	manage.click();
+    	schedule.click();
     	Thread.sleep(5000);
     }
 }
