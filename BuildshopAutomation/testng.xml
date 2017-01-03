@@ -4,6 +4,17 @@
   <test name="Test">
     <classes>
       <class name="tests.VerifyLogin"/>
+      <class name="tests.ContactsAddContact"/>
+      <class name="tests.ContactsAddProspect"/>
+      <class name="tests.Field360ConvertQuoteToJobToUninvoicedJobsToOpenInvoices"/>
+      <class name="tests.Field360Cust"/>
+      <class name="tests.PlanEstimateDeleteItemTest"/>
+      <class name="tests.PlanEstimateEditItemTest"/>
+      <class name="tests.PlanEstimateTest"/>
+      <class name="tests.ProcureMaterial"/>
+      <class name="tests.ProcureTest"/>
+      <class name="tests.SuperTest"/>
+      <class name="tests.VerifyLogin"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
