@@ -112,8 +112,8 @@ public class BaseClass {
 				}  
 			        getBrowserOsInfo(wdriver);
 			        driver = new EventFiringWebDriver(wdriver);
-			        MyEventListener m = new MyEventListener();
-			        driver.register(m);
+			       // MyEventListener m = new MyEventListener();
+			      //  driver.register(m);
 					driver.manage().window().maximize();
 					driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 					driver.get(ExcelLibrary.getExcelData(path+"\\config\\config.xls", "config", 1, 1));

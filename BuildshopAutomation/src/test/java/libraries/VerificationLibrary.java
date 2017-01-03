@@ -276,9 +276,9 @@ public class VerificationLibrary {
 		}				
 	}	
 	
-	public static void verifyTableRowCount(WebDriver driver, String sectionName,int expectedRowCount){
+	/*public static void verifyTableRowCount(WebDriver driver, String sectionName,int expectedRowCount){
 		Assert.assertEquals(GenericUtils.getTableRowCountBySectionName(driver, sectionName), expectedRowCount); 
-	}
+	}*/
 	
 	public static void verifyPetProfileCompletionColor(WebDriver driver, String sectionName, String expectedColor){
 		String xpth = "//ul[contains(@class,'pet-sidebar')]/li/a[contains(text(),'"+sectionName+"')]/i";

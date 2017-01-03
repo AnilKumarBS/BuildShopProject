@@ -14,7 +14,7 @@ import org.testng.TestListenerAdapter;
 
 public class MyTestListner extends TestListenerAdapter {	
 
-	public void onTestFailure(ITestResult result)
+	/*public void onTestFailure(ITestResult result)
     {
 		Object currentClass = result.getInstance();
 		String fileName = BackUp.path+"/screenshots/"+((BaseClass) currentClass).getClassName()+".jpg";
@@ -30,7 +30,7 @@ public class MyTestListner extends TestListenerAdapter {
 				e.printStackTrace();
 			}
         }
-    }	
+    }	*/
 	
 	public void onTestSkipped(ITestResult result)
 	{
