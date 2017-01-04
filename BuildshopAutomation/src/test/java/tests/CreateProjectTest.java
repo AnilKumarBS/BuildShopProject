@@ -27,11 +27,11 @@ public class CreateProjectTest extends SuperTest
 	  cp.enterfname("Rakesh");
 	  cp.enterlname("SB");
 	  cp.enterpnum("9916780313");
-	  cp.enterext("+91");
+	 // cp.enterext("+91");
 	  cp.enterCellNum("9632237006");
-	  cp.enterFax("1234567890");
+	//  cp.enterFax("1234567890");
 	  cp.enterEmailId("rakeshsb313@gmail.com");
-	  cp.enterstreetaddress("Basavanagudi");
+	 // cp.enterstreetaddress("Basavanagudi");
 	  cp.selectCountry(2);
 	  cp.selectState(2);
 	  cp.selectCity(1);
