@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.AssertJUnit;
 
+import libraries.ExcelLibrary;
+
 
 public class Field360Customer 
 {
@@ -21,14 +23,7 @@ public class Field360Customer
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	/*@FindBy(xpath="//div[contains(text(),'Projects')]")
-	private WebElement projectsButton;
-	
-	//xpath to select project = 'S-Project'.......
-	@FindBy(xpath="//a[@id='ctl00_GridViewNavigation_ctl10_btnProjectID']")
-	private WebElement selectProjectButton;
-	*/
+
 	@FindBy(xpath="//a[text()='Customers']")
 	private WebElement customersLink;
 	
@@ -56,7 +51,7 @@ public class Field360Customer
 	@FindBy(xpath="//input[@id='ctl00_MainContent_FormViewContactInsert_PhoneTextBox']")
 	private WebElement phoneTB;
 	
-	@FindBy(xpath="//input[@id='ctl00_MainContent_TabContainerEdit_TabPanelContactsEdit_FormViewContactsEdit_ExtensionTextBox']")
+	@FindBy(xpath="//input[@id='ctl00_MainContent_FormViewContactInsert_ExtensionTextBox']")
 	private WebElement phoneExtTB;	
 	
 	@FindBy(xpath="//input[@id='ctl00_MainContent_FormViewContactInsert_CellPhoneTextBox']")
@@ -286,23 +281,29 @@ public class Field360Customer
 	
 	public void customerMethod() throws InterruptedException
 	{
-		/*Actions a1=new Actions(driver);
-		a1.moveToElement(projectsButton).perform();
-		Thread.sleep(1000);
-		selectProjectButton.click();
-		Thread.sleep(3000);*/
 		customersLink.click();
 		addCustomerButton.click();
-		//companyNameTB.sendKeys("xyxyNew Company1234");
-		contactNameTB.sendKeys("Demo Cust");
-		firstNameTB.sendKeys("autoCust");
-		//lastNameTB.sendKeys("demo2012");
-		//phoneTB.sendKeys("22336655");
-		//cellPhoneTB.sendKeys("9988665522");
-		//faxTB.sendKeys("fax12345");
-		//emailTB.sendKeys("xyxycust123@aaa.com");
-		//streetTB.sendKeys("Some Street");		
-		/*Select s1=new Select(countryLB);
+		String compName = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,0);
+		companyNameTB.sendKeys(compName);
+		String contName = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,1);
+		contactNameTB.sendKeys(contName);
+		String firstName = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,2);
+		firstNameTB.sendKeys(firstName);
+		String lastName = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,3);
+		lastNameTB.sendKeys(lastName);
+		String phone = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,4);
+		phoneTB.sendKeys(phone);
+		String phoneExt = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,5);
+		phoneExtTB.sendKeys(phoneExt);
+		String cellPhone = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,6);
+		cellPhoneTB.sendKeys(cellPhone);
+		String fax = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,7);
+		faxTB.sendKeys(fax);
+		String email = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,8);
+		emailTB.sendKeys(email);
+		String street = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,9);
+		streetTB.sendKeys(street);
+		Select s1=new Select(countryLB);
 		s1.selectByVisibleText("Australia");		
 		Thread.sleep(3000);		
 		Select s2=new Select(stateLB);
@@ -310,27 +311,25 @@ public class Field360Customer
 		Thread.sleep(3000);		
 		Select s3=new Select(cityLB);
 		s3.selectByValue("6555");		
-		Thread.sleep(3000);*/		
+		Thread.sleep(3000);		
 		JavascriptExecutor j=(JavascriptExecutor)driver;
 		j.executeScript("window.scrollBy(0,600)");		
 		Thread.sleep(2000);		
-		/*zipCodeTB.sendKeys("666333");
-		longitudeTB.sendKeys("120");
-		latitudeTB.sendKeys("80");*/		
+		String zipCode = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,10);
+		zipCodeTB.sendKeys(zipCode);
+		String longitude = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,11);
+		longitudeTB.sendKeys(longitude);
+		String latitude = ExcelLibrary.getExcelData("datafile.xls","Field360Customers",1,12);
+		latitudeTB.sendKeys(latitude);	
 		saveButton.click();
 		Thread.sleep(2000);
 		j.executeScript("window.scrollBy(0,-600)");
 		Thread.sleep(2000);
 		doneButton.click();
 		Thread.sleep(2000);
-		/*String s=cmpnyName.getText();
-		AssertJUnit.assertEquals("aaaaaNew Company1234", s);
-		Thread.sleep(2000);
-		Reporter.log("True",true);
-		Thread.sleep(2000);*/
 		
 		String actual=driver.findElement(By.xpath("//span[contains(text(),'Demo Cust')]")).getText();
-		AssertJUnit.assertEquals("Demo Cust", actual);	
+		AssertJUnit.assertEquals("Demo Cust",actual);	
 
 	}
 	

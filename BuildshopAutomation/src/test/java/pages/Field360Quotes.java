@@ -14,6 +14,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import libraries.ExcelLibrary;
+
 public class Field360Quotes 
 {
 	public WebDriver driver;
@@ -1406,7 +1408,8 @@ public class Field360Quotes
 		quotesLink.click();
 		Thread.sleep(2000);
 		addQuotesButton.click();
-		jobNameTB.sendKeys("aaaJob");
+		String jobName = ExcelLibrary.getExcelData("datafile.xls","Field360Quotes",1,0);
+		jobNameTB.sendKeys(jobName);
 		jobStatusLB.click();		
 		Select s1=new Select(jobStatusLB);
 		s1.selectByIndex(1);
@@ -1429,9 +1432,12 @@ public class Field360Quotes
 		Thread.sleep(1000);		
 		appInfoCheckBoxTB.click();
 		Thread.sleep(1000);	
-		appInfoStartTimeTB.sendKeys("1/2/2017 10:00 PM");
-		appInfoFinishTimeTB.sendKeys("1/26/2017 4:00 PM");
-		appInfoJobDetailsTB.sendKeys("Job Description.....");		
+		String startTime = ExcelLibrary.getExcelData("datafile.xls","Field360Quotes",1,1);
+		appInfoStartTimeTB.sendKeys(startTime);
+		String finishTime = ExcelLibrary.getExcelData("datafile.xls","Field360Quotes",1,2);
+		appInfoFinishTimeTB.sendKeys(finishTime);
+		String JobDesc = ExcelLibrary.getExcelData("datafile.xls","Field360Quotes",1,3);
+		appInfoJobDetailsTB.sendKeys(JobDesc);		
 		quoteSaveButton.click();
 		Thread.sleep(2000);		
 		j.executeScript("window.scrollBy(0,-600)");
@@ -1472,10 +1478,7 @@ public class Field360Quotes
 		Assert.assertEquals(actual, "aaaaNewCustomer12");
 		Thread.sleep(2000);
 		quotesLink.click();
-				
+		
 	}
-	
-	
-	
-	
+
 }
