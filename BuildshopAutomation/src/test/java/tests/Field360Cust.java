@@ -19,7 +19,7 @@ public class Field360Cust extends BaseClass
 	  sp.SignInMethod();
 	  
 	  HomePage hp=new HomePage(driver);
-	  hp.homePageMethod();
+	  hp.Field360ModuleMethod();
 	  
 	  Field360Customer fc=new Field360Customer(driver);
 	  fc.customerMethod();

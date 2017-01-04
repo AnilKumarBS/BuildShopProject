@@ -19,7 +19,7 @@ public class Field360ConvertQuoteToJobToUninvoicedJobsToOpenInvoices extends Bas
 	  sp.SignInMethod();
 	  
 	  HomePage hp=new HomePage(driver);
-	  hp.homePageMethod();
+	  hp.Field360ModuleMethod();
 	  
 	  Field360Quotes fq=new Field360Quotes(driver);
 	  fq.convertToJobMethod();
