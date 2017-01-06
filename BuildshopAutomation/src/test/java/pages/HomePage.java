@@ -77,19 +77,33 @@ public class HomePage
 	private WebElement bidCenterModule;
 	
 	
+	//Account Signout....	
+	@FindBy(xpath="//span[@id='ctl00_LoginViewProfessional_LoginName1']")
+	private WebElement LoginNameDropDown;
+		
+	@FindBy(xpath="//a[@id='ctl00_lnkBtnLogout']")
+	private WebElement LoginNameDropDownSignoutOption;
+	
 	public void Field360ModuleMethod()
 	{
 		field360Module.click();
 	}
 	
-	public void createProjectMethod() throws InterruptedException
+	public void selectProjectMethod() throws InterruptedException
 	{
 		Actions a=new Actions(driver);
 		a.moveToElement(projectsButton).perform();
 		Thread.sleep(1000);
-		addProjectsLink.click();
+		addProjectsLink.click();		
+	}
+	
+	public void signoutMethod() throws InterruptedException
+	{
+		Actions a1=new Actions(driver);
+		a1.moveToElement(LoginNameDropDown).perform();
 		Thread.sleep(1000);
-			
+		LoginNameDropDownSignoutOption.click();
+		Thread.sleep(2000);		
 	}
 	
 }

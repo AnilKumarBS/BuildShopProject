@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import libraries.ExcelLibrary;
+
 public class SignInPage 
 {
 public WebDriver driver;
@@ -26,9 +28,29 @@ public WebDriver driver;
     
     public void SignInMethod()
     {
-        un.sendKeys("Bill Thomas");
-        pw.sendKeys("Bill1234");
+    	String username = ExcelLibrary.getExcelData("datafile.xls","SignIN",2,0);
+        un.sendKeys(username);
+        String password = ExcelLibrary.getExcelData("datafile.xls","SignIN",2,1);
+        pw.sendKeys(password);
         signinButton.click();
+    }
+    
+    public void SamBruceSignInMethod()
+    {
+    	String username = ExcelLibrary.getExcelData("datafile.xls","SignIN",6,0);
+        un.sendKeys(username);
+        String password = ExcelLibrary.getExcelData("datafile.xls","SignIN",6,1);
+        pw.sendKeys(password);
+        signinButton.click();    	
+    }
+    
+    public void MirandaJacobSignInMethod()
+    {
+    	String username = ExcelLibrary.getExcelData("datafile.xls","SignIN",10,0);
+        un.sendKeys(username);
+        String password = ExcelLibrary.getExcelData("datafile.xls","SignIN",10,1);
+        pw.sendKeys(password);
+        signinButton.click();    	
     }
 
 }
