@@ -14,8 +14,6 @@ public class SignIn extends BaseClass
       
       SignInPage sp=new SignInPage(driver);
       sp.SignInMethod();   
-      
-      
-      
+                  
   }
 }
