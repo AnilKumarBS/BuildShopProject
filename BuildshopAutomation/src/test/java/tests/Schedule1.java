@@ -2,9 +2,10 @@ package tests;
 
 import org.testng.annotations.Test;
 import pages.MainPage;
+import pages.ManageDashboardPage;
+import pages.ManageHomePage;
 import pages.SignInPage;
-import pages.HomePage;
-import pages.DashboardPage;
+
 import pages.SchedulePage1;
 
 public class Schedule1 extends BaseClass 
@@ -18,11 +19,11 @@ public class Schedule1 extends BaseClass
 	      SignInPage sp=new SignInPage(driver);
 	      sp.SignInMethod();  
 	      
-	      HomePage hp=new HomePage(driver);
-	      hp.HomePageMethod();    
+	      ManageHomePage hp=new ManageHomePage(driver);
+	      hp.ManageHomePageMethod();
 	      
-	      //DashboardPage d=new DashboardPage(driver);
-	      //d.DashboardMethod();
+	      ManageDashboardPage d=new ManageDashboardPage(driver);
+	      d.ManageDashboardMethod();
 	      
 	      SchedulePage1 s=new SchedulePage1(driver);
 	      s.SchedulePage1Method();	   

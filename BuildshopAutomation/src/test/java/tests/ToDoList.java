@@ -2,9 +2,10 @@ package tests;
 
 import org.testng.annotations.Test;
 import pages.MainPage;
+import pages.ManageDashboardPage;
+import pages.ManageHomePage;
 import pages.SignInPage;
-import pages.HomePage;
-import pages.DashboardPage;
+
 import pages.ScheduleSubModulesPage;
 import pages.ToDoListPage;
 
@@ -19,11 +20,11 @@ public class ToDoList extends BaseClass
 	      SignInPage sp=new SignInPage(driver);
 	      sp.SignInMethod();  
 	      
-	      HomePage hp=new HomePage(driver);
-	      hp.HomePageMethod();    
+	      ManageHomePage hp=new ManageHomePage(driver);
+	      hp.ManageHomePageMethod();
 	      
-	      /*DashboardPage d=new DashboardPage(driver);
-	      d.DashboardMethod();*/
+	      ManageDashboardPage d=new ManageDashboardPage(driver);
+	      d.ManageDashboardMethod();
 	      
 	      ScheduleSubModulesPage ssmp= new ScheduleSubModulesPage(driver);
 	      ssmp.ScheduleSubModulesMethod();

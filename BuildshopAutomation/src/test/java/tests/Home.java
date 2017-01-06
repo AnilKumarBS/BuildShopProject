@@ -3,7 +3,6 @@ package tests;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.SignInPage;
-import pages.HomePage;
 
 public class Home extends BaseClass 
 {
@@ -16,8 +15,8 @@ public class Home extends BaseClass
 	      SignInPage sp=new SignInPage(driver);
 	      sp.SignInMethod();  
 	      
-	      HomePage hp=new HomePage(driver);
-	      hp.HomePageMethod();    	      
+//	      HomePage hp=new HomePage(driver);
+//	      hp.HomePageMethod();    	      
 	   
 	}
 }

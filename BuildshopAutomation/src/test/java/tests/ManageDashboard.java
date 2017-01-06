@@ -1,16 +1,16 @@
 package tests;
 
 import org.testng.annotations.Test;
+
 import pages.MainPage;
 import pages.ManageDashboardPage;
 import pages.ManageHomePage;
 import pages.SignInPage;
-import pages.SchedulePage;
 
-public class Schedule extends BaseClass 
+public class ManageDashboard extends BaseClass 
 {
 	  @Test
-	  public void SchedulePage() throws InterruptedException 
+	  public void DashboardPage() throws InterruptedException 
 	{
 	      MainPage mp = new MainPage(driver);
 	      mp.signinPage();
@@ -19,13 +19,10 @@ public class Schedule extends BaseClass
 	      sp.SignInMethod();  
 	      
 	      ManageHomePage hp=new ManageHomePage(driver);
-	      hp.ManageHomePageMethod();
+	      hp.ManageHomePageMethod();   
 	      
 	      ManageDashboardPage d=new ManageDashboardPage(driver);
 	      d.ManageDashboardMethod();
-	      
-	      SchedulePage s=new SchedulePage(driver);
-	      s.ScheduleMethod();
 	   
 	}
 }
