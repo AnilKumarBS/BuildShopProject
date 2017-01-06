@@ -183,7 +183,7 @@ public WebDriver driver;
     	Thread.sleep(2000);
     	
     	Actions act2=new Actions(driver);
-    	act.moveToElement(editicon).click().perform();
+    	act2.moveToElement(editicon).click().perform();
     	
     	editlink.click();
     	Thread.sleep(2000);
