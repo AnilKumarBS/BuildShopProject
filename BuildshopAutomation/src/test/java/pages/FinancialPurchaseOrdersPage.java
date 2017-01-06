@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import libraries.ExcelLibrary;
 
 public class FinancialPurchaseOrdersPage 
 {
@@ -20,7 +21,7 @@ public WebDriver driver;
     @FindBy(xpath="//div[@class='btnProjetstxt']")
     public WebElement projects;  
     
-    @FindBy(xpath="//a[@id='ctl00_GridViewNavigation_ctl14_btnProjectID']")
+    @FindBy(xpath="//table[@id='ctl00_GridViewNavigation']//a[contains(text(),'S-Project')]")
     public WebElement sproject; 
     
     @FindBy(xpath="//a[text()='Purchase Orders']")
@@ -64,8 +65,11 @@ public WebDriver driver;
     	purchaseorders.click();
     	Thread.sleep(2000); 
     	
-    	createapurchaseorder.sendKeys("Purchase Order 1");
-    	Thread.sleep(2000); 
+//    	createapurchaseorder.sendKeys("Purchase Order 1");
+//    	Thread.sleep(2000); 
+    	
+    	String createapurchaseordr = ExcelLibrary.getExcelData("datafile.xls","Financial",7,0);
+    	createapurchaseorder.sendKeys(createapurchaseordr);
     	
     	pleaseaddadate.click();
     	Thread.sleep(2000); 

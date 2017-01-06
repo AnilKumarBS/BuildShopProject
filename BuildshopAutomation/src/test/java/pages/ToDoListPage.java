@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import libraries.ExcelLibrary;
+
 public class ToDoListPage
 {
 public WebDriver driver;
@@ -131,8 +133,11 @@ public WebDriver driver;
     	date1.click();
     	Thread.sleep(2000); 
     	
-    	task.sendKeys("task1");
-    	Thread.sleep(2000);
+//    	task.sendKeys("task1");
+//    	Thread.sleep(2000);
+    	
+    	String tas = ExcelLibrary.getExcelData("datafile.xls","Manage",4,0);
+        task.sendKeys(tas);
 
     	status.click();
     	Thread.sleep(2000);
@@ -140,8 +145,11 @@ public WebDriver driver;
     	active.click();
     	Thread.sleep(2000);
     	
-    	location.sendKeys("Bangalore");
-    	Thread.sleep(2000);
+//    	location.sendKeys("Bangalore");
+//    	Thread.sleep(2000);
+    	
+    	String loc = ExcelLibrary.getExcelData("datafile.xls","Manage",4,1);
+        location.sendKeys(loc);
     	
     	save.click();
     	Thread.sleep(2000);

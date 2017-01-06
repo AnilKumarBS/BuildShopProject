@@ -1,13 +1,12 @@
 package pages;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
+
+import libraries.ExcelLibrary;
 
 public class PunchListPage
 {
@@ -92,8 +91,11 @@ public WebDriver driver;
     	addacategory.click();
     	Thread.sleep(2000);
     	
-    	category.sendKeys("Rooms");
-    	Thread.sleep(2000);
+//    	category.sendKeys("Rooms");
+//    	Thread.sleep(2000);
+    	
+    	String cat = ExcelLibrary.getExcelData("datafile.xls","Manage",7,0);
+        category.sendKeys(cat);
     	
     	save.click();
     	Thread.sleep(2000);
@@ -159,8 +161,11 @@ public WebDriver driver;
 	    	
 	    }*/
     	
-    	addatask.sendKeys("Room1");
-    	Thread.sleep(2000);
+//    	addatask.sendKeys("Room1");
+//    	Thread.sleep(2000);
+    	
+    	String addtask = ExcelLibrary.getExcelData("datafile.xls","Manage",7,1);
+        addatask.sendKeys(addtask);
     	
     	taskdueon.click();
     	Thread.sleep(2000);

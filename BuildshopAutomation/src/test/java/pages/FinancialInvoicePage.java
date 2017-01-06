@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import libraries.ExcelLibrary;
+
 public class FinancialInvoicePage 
 {
 public WebDriver driver;
@@ -21,8 +23,11 @@ public WebDriver driver;
     @FindBy(xpath="//div[@class='btnProjetstxt']")
     public WebElement projects;  
     
-    @FindBy(xpath="//a[@id='ctl00_GridViewNavigation_ctl14_btnProjectID']")
+    @FindBy(xpath="//a[@id='ctl00_GridViewNavigation_ctl15_btnProjectID']")
     public WebElement sprojects;  
+    
+    /*@FindBy(xpath="//table[@id='ctl00_GridViewNavigation']//a[contains(text(),'S-Project')]")
+    public WebElement sprojects;  */
     
     @FindBy(xpath="//a[text()='Invoices']")
     public WebElement invoices;  
@@ -81,8 +86,11 @@ public WebDriver driver;
     	addinvoice.click();
     	Thread.sleep(2000); 
     	
-    	invoicetitle.sendKeys("Invoice1");
-    	Thread.sleep(2000); 
+//    	invoicetitle.sendKeys("Invoice1");
+//    	Thread.sleep(2000); 
+    	
+    	String invoicetitl = ExcelLibrary.getExcelData("datafile.xls","Financial",4,0);
+        invoicetitle.sendKeys(invoicetitl);
     	
     	invoicedate.click();
     	Thread.sleep(2000); 

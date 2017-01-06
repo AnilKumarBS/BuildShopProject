@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import libraries.ExcelLibrary;
+
 public class ScheduleSubModulesPage
 {
 public WebDriver driver;
@@ -22,8 +24,11 @@ public WebDriver driver;
     @FindBy(xpath="//div[@class='btnProjetstxt']")
     public WebElement projects;  
     
-    @FindBy(xpath="//a[@id='ctl00_GridViewNavigation_ctl14_btnProjectID']")
+    @FindBy(xpath="//a[@id='ctl00_GridViewNavigation_ctl15_btnProjectID']")
     public WebElement sprojects;  
+            
+    /*@FindBy(xpath="//table[@id='ctl00_GridViewNavigation']//a[contains(text(),'S-Project')]")
+    public WebElement sprojects;*/ 
     
     @FindBy(xpath="//a[text()='Schedule']")
     public WebElement schedule;
@@ -114,24 +119,18 @@ public WebDriver driver;
           
     @FindBy(xpath="//input[@id='ctl00_MainContent_GridView1_ctl02_LinkButton2']")
     public WebElement deletelink; */
+   
+    //@FindBy(xpath="//input[@id='ctl00_MainContent_btnSchedule']")
+    //public WebElement views; 
     
+    //@FindBy(xpath="//div[@class='HyperLinkButtonsSch']")
+    //public WebElement multiview; 
     
+    //@FindBy(xpath="//input[@id='ctl00_MainContent_btnSchedule']")
+    //public WebElement views1; 
     
-    
-  
-    
-    
-																						    //@FindBy(xpath="//input[@id='ctl00_MainContent_btnSchedule']")
-																						    //public WebElement views; 
-																						    
-																						    //@FindBy(xpath="//div[@class='HyperLinkButtonsSch']")
-																						    //public WebElement multiview; 
-																						    
-																						    //@FindBy(xpath="//input[@id='ctl00_MainContent_btnSchedule']")
-																						    //public WebElement views1; 
-																						    
-																						    //@FindBy(xpath="//div[@class='HyperLinkButtonsSch2']")
-																						    //public WebElement gantt; 
+    //@FindBy(xpath="//div[@class='HyperLinkButtonsSch2']")
+    //public WebElement gantt; 
     
     /*@FindBy(xpath="//input[@name='ctl00$MainContent$FormViewSchIns$ItemTextBox']")
     public WebElement addatask; 
@@ -160,31 +159,42 @@ public WebDriver driver;
     public void ScheduleSubModulesMethod() throws InterruptedException
     {
     	
-    	Actions act=new Actions(driver);
+    	/*Actions act=new Actions(driver);
     	act.moveToElement(projects).perform();
+    	Thread.sleep(2000); 
     	
     	Actions act1=new Actions(driver);
     	act1.moveToElement(sprojects).click().perform();
+    	
+    	sprojects.click();
+    	Thread.sleep(2000);
+    	*/
+    	
     	
     	schedule.click();
     	Thread.sleep(2000);   
     	
     	addtask.click();
-    	Thread.sleep(2000);   
+    	Thread.sleep(2000);  
     	
-    	itemnum.sendKeys("001");
-    	Thread.sleep(2000);   
+    	//itemnum.sendKeys("001");
+    	//Thread.sleep(2000);
     	
-    	desc.sendKeys("Doors Type");
-    	Thread.sleep(2000);   
+    	String itmnum = ExcelLibrary.getExcelData("datafile.xls","Manage",1,0);
+        itemnum.sendKeys(itmnum);
     	
-    	addtoestimate.click();
+    	//desc.sendKeys("Doors Type");
+    	//Thread.sleep(2000); 
+        
+        String des = ExcelLibrary.getExcelData("datafile.xls","Manage",1,1);
+        desc.sendKeys(des);
+        
+        addtoestimate.click();
     	Thread.sleep(2000);   
     	
     	JavascriptExecutor js=(JavascriptExecutor)driver;
     	js.executeScript("window.scrollBy(0,400)");			
     	Thread.sleep(2000);
-    	
     	
     	Select select=new Select(division);
     	select.selectByValue("General");				
@@ -213,8 +223,12 @@ public WebDriver driver;
     	Thread.sleep(2000);
     	
     	percentcomplete.clear();
-    	percentcomplete.sendKeys("0.10");
-    	Thread.sleep(2000);
+    	
+//    	percentcomplete.sendKeys("0.10");
+//    	Thread.sleep(2000);
+    	
+    	String pc = ExcelLibrary.getExcelData("datafile.xls","Manage",1,2);
+        percentcomplete.sendKeys(pc);
     	
     	addtoscope.click();
     	Thread.sleep(2000);
@@ -225,12 +239,18 @@ public WebDriver driver;
     	JavascriptExecutor js2=(JavascriptExecutor)driver;
 		js2.executeScript("window.scrollBy(0,200)");		
 		Thread.sleep(2000);
+					
+//		scope.sendKeys("Scope");
+//		Thread.sleep(2000);
+//		
+//		exclusions.sendKeys("Nope");
+//		Thread.sleep(2000);
 		
-		scope.sendKeys("Scope");
-		Thread.sleep(2000);
-		
-		exclusions.sendKeys("Nope");
-		Thread.sleep(2000);
+		String scop = ExcelLibrary.getExcelData("datafile.xls","Manage",1,3);
+		scope.sendKeys(scop);
+        
+        String exc = ExcelLibrary.getExcelData("datafile.xls","Manage",1,4);
+        exclusions.sendKeys(exc);
 		
 		JavascriptExecutor js3=(JavascriptExecutor)driver;
 		js3.executeScript("window.scrollBy(0,400)");		
@@ -244,12 +264,12 @@ public WebDriver driver;
 		Thread.sleep(2000);
 		
 		done.click();
-		Thread.sleep(2000);	
+		Thread.sleep(2000);
 		
 		/*doorstype.click();
 		Thread.sleep(2000);	
 		
-		/*search.sendKeys("Doors Type");
+		search.sendKeys("Doors Type");
 		Thread.sleep(2000);	
 		
 		searchbutton.click();
@@ -308,7 +328,7 @@ public WebDriver driver;
 																						//Thread.sleep(2000);	
 																						
 																						//driver.close();
-																			//Thread.sleep(200			0);	
+																						//Thread.sleep(2000);	
 																						
 																						//views1.click();
 																						//Thread.sleep(2000);	
@@ -345,8 +365,7 @@ public WebDriver driver;
 		Thread.sleep(2000);	
 		
 		search1.clear();
-		Thread.sleep(2000);	*/
-		
-		
+		Thread.sleep(2000);	*/	
+       
 	}
 }

@@ -8,6 +8,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import libraries.ExcelLibrary;
+
 public class FinancialBudgetExpensesPage 
 {
 public WebDriver driver;
@@ -21,8 +23,11 @@ public WebDriver driver;
     @FindBy(xpath="//div[@class='btnProjetstxt']")
     public WebElement projects;  
     
-    @FindBy(xpath="//a[@id='ctl00_GridViewNavigation_ctl14_btnProjectID']")
+    @FindBy(xpath="//a[@id='ctl00_GridViewNavigation_ctl15_btnProjectID']")
     public WebElement sprojects;  
+    
+    /*@FindBy(xpath="//table[@id='ctl00_GridViewNavigation']//a[contains(text(),'S-Project')]")
+    public WebElement sprojects;  */
     
     @FindBy(xpath="//a[text()='Budget/Expenses']")
     public WebElement budgetexpenses; 
@@ -39,8 +44,8 @@ public WebDriver driver;
     @FindBy(xpath="//a[text()='Business Categories ']")
     public WebElement businesscategories;  
     
-    @FindBy(xpath="//a[contains(text(),'Car')]")
-    public WebElement car;  
+    @FindBy(xpath="//a[contains(text(),'Insurance')]")
+    public WebElement insurance;  
     
     @FindBy(xpath="//input[@id='ctl00_MainContent_FormViewEstIns_DateTextBox']")
     public WebElement additem;  
@@ -57,11 +62,11 @@ public WebDriver driver;
     @FindBy(xpath="//input[@id='ctl00_MainContent_FormViewEstIns_SaveButton']")
     public WebElement save1;  
     
-    /*@FindBy(xpath="//span[contains(text(),'Volkswagen')]/../..//td[4]")
-    public WebElement volkswagendelete;  
+    /*@FindBy(xpath="//span[contains(text(),'Home')]/../..//td[4]")
+    public WebElement homedelete;  
     
-    @FindBy(xpath="//a[contains(text(),'Car')]/../..//div")
-    public WebElement cardelete;  
+    @FindBy(xpath="//a[contains(text(),'Insurance')]/../..//div")
+    public WebElement insurancedelete;  
               
     @FindBy(xpath="//a[text()='Business Categories ']")
     public WebElement businesscategory1;   */
@@ -90,8 +95,12 @@ public WebDriver driver;
     	addbusinesscategory.click();
     	Thread.sleep(2000);
     	
-    	businesscategory.sendKeys("Car");
-    	Thread.sleep(2000);
+//    	businesscategory.sendKeys("Insurance");
+//    	Thread.sleep(2000);
+    	
+    	String bc = ExcelLibrary.getExcelData("datafile.xls","Financial",1,0);
+        businesscategory.sendKeys(bc);
+        Thread.sleep(2000);
     	
     	save.click();
     	Thread.sleep(2000);
@@ -99,18 +108,30 @@ public WebDriver driver;
     	businesscategories.click();
     	Thread.sleep(2000);
     	
-    	car.click();
+    	insurance.click();
     	Thread.sleep(2000);
     	
-    	additem.sendKeys("5");
-    	Thread.sleep(2000);
+//    	additem.sendKeys("5");
+//    	Thread.sleep(2000);
     	
-    	addadescription.sendKeys("Volkswagen");
-    	Thread.sleep(2000);
+    	String addite = ExcelLibrary.getExcelData("datafile.xls","Financial",1,1);
+        additem.sendKeys(addite);
+        Thread.sleep(2000);
+    	
+//    	addadescription.sendKeys("Home");
+//    	Thread.sleep(2000);
+        
+        String adddesc = ExcelLibrary.getExcelData("datafile.xls","Financial",1,2);
+        addadescription.sendKeys(adddesc);
+        Thread.sleep(2000);
     	
     	budget.click();
-    	budget.sendKeys("600000");
-    	Thread.sleep(2000);
+//    	budget.sendKeys("600000");
+//    	Thread.sleep(2000);
+    	
+    	String budge = ExcelLibrary.getExcelData("datafile.xls","Financial",1,3);
+        budget.sendKeys(budge);
+        Thread.sleep(2000);
     	
     	plusbutton.click();
     	Thread.sleep(2000);
@@ -118,7 +139,7 @@ public WebDriver driver;
     	save1.click();
     	Thread.sleep(2000); 
     	
-    	/*volkswagendelete.click();
+    	/*homedelete.click();
     	Thread.sleep(2000); 
     	    	    	
     	try
@@ -131,7 +152,7 @@ public WebDriver driver;
 	    	
 	    }
     	
-    	cardelete.click();
+    	insurancedelete.click();
     	Thread.sleep(2000); 
            	   	
     	try
@@ -158,7 +179,7 @@ public WebDriver driver;
     	/*additem.sendKeys("5");
     	Thread.sleep(2000);
     	
-    	addadescription.sendKeys("Nissan");
+    	addadescription.sendKeys("House");
     	Thread.sleep(2000);
     	
     	budget.click();
@@ -175,7 +196,7 @@ public WebDriver driver;
     	js1.executeScript("window.scrollBy(0,-400)");			
     	Thread.sleep(2000);
     	
-    	search.sendKeys("Nissan");
+    	search.sendKeys("House");
     	Thread.sleep(2000);	
     	
     	searchbutton.click();
