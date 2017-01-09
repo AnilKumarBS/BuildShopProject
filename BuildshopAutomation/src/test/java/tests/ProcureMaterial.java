@@ -2,11 +2,11 @@ package tests;
 
 import org.testng.annotations.Test;
 
-import page.HomeDashboardPage;
-import page.DrawingPage;
-import page.ProcurePage;
-import page.SignInPage;
-import page.WelcomePage;
+import pages.HomeDashboardPage;
+import pages.DrawingPage;
+import pages.ProcurePage;
+import pages.SignInPage;
+import pages.WelcomePage;
 
 public class ProcureMaterial extends SuperTest 
 {
@@ -17,9 +17,7 @@ public class ProcureMaterial extends SuperTest
 	  wp.clickSignIn();
 	  
 	  SignInPage si=new SignInPage(driver);
-	  si.enterUsername();
-	  si.enterPassword();
-	  si.clickSignIn();
+	  si.SignInMethod();
 	  
 	  HomeDashboardPage db=new HomeDashboardPage(driver);
 	  db.clickOnProcure();

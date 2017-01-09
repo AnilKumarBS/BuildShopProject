@@ -2,11 +2,11 @@ package tests;
 
 import org.testng.annotations.Test;
 
-import page.HomeDashboardPage;
-import page.DrawingPage;
-import page.EstimatePage;
-import page.SignInPage;
-import page.WelcomePage;
+import pages.HomeDashboardPage;
+import pages.DrawingPage;
+import pages.EstimatePage;
+import pages.SignInPage;
+import pages.WelcomePage;
 
 public class PlanEstimateTest extends SuperTest
 {
@@ -18,9 +18,7 @@ public class PlanEstimateTest extends SuperTest
 	  wp.clickSignIn();
 	  
 	  SignInPage si=new SignInPage(driver);
-	  si.enterUsername();
-	  si.enterPassword();
-	  si.clickSignIn();
+	  si.SignInMethod();
 	  
 	  HomeDashboardPage db=new HomeDashboardPage(driver);
 	  db.clickPlanButton();

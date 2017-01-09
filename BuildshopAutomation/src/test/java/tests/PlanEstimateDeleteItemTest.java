@@ -2,9 +2,9 @@ package tests;
 
 import org.testng.annotations.Test;
 
-import pages.DashboardPage;
 import pages.DrawingPage;
 import pages.EstimatePage;
+import pages.HomeDashboardPage;
 import pages.SignInPage;
 import pages.WelcomePage;
 
@@ -19,7 +19,7 @@ public class PlanEstimateDeleteItemTest extends SuperTest
 	  SignInPage si=new SignInPage(driver);
 	  si.SignInMethod();
 	  
-	  DashboardPage db=new DashboardPage(driver);
+	  HomeDashboardPage db=new HomeDashboardPage(driver);
 	  db.clickPlanButton();
 	  
 	  DrawingPage dp=new DrawingPage(driver);

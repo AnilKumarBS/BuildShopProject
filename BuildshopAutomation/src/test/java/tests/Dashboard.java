@@ -1,10 +1,10 @@
 package tests;
 
 import org.testng.annotations.Test;
-import pages.MainPage;
-import pages.SignInPage;
-import pages.HomePage;
 import pages.DashboardPage;
+import pages.MainPage;
+import pages.ManageHomePage;
+import pages.SignInPage;
 
 public class Dashboard extends BaseClass 
 {
@@ -17,8 +17,8 @@ public class Dashboard extends BaseClass
 	      SignInPage sp=new SignInPage(driver);
 	      sp.SignInMethod();  
 	      
-	      HomePage hp=new HomePage(driver);
-	      hp.HomePageMethod();    
+	      ManageHomePage hp=new ManageHomePage(driver);
+	      hp.ManageHomePageMethod();    
 	      
 	      DashboardPage d=new DashboardPage(driver);
 	      d.DashboardMethod();

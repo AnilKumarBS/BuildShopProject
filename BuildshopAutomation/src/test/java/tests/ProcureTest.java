@@ -2,8 +2,8 @@ package tests;
 
 import org.testng.annotations.Test;
 
-import pages.DashboardPage;
 import pages.DrawingPage;
+import pages.HomeDashboardPage;
 import pages.ProcurePage;
 import pages.SignInPage;
 import pages.WelcomePage;
@@ -20,7 +20,7 @@ public class ProcureTest extends SuperTest
 	  SignInPage si=new SignInPage(driver);
 	  si.SignInMethod();
 	  
-	  DashboardPage db=new DashboardPage(driver);
+	  HomeDashboardPage db=new HomeDashboardPage(driver);
 	  db.clickOnProcure();
 	  
 	  DrawingPage dp=new DrawingPage(driver);

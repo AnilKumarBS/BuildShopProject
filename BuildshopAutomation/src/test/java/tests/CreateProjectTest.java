@@ -2,9 +2,9 @@ package tests;
 
 import org.testng.annotations.Test;
 
-import page.CreateProjectPage;
-import page.SignInPage;
-import page.WelcomePage;
+import pages.CreateProjectPage;
+import pages.SignInPage;
+import pages.WelcomePage;
 
 public class CreateProjectTest extends SuperTest 
 {
@@ -16,9 +16,7 @@ public class CreateProjectTest extends SuperTest
 	  wp.clickSignIn();
 	  
 	  SignInPage si=new SignInPage(driver);
-	  si.enterUsername();
-	  si.enterPassword();
-	  si.clickSignIn();
+	  si.SignInMethod();
 	  
 	  CreateProjectPage cp=new CreateProjectPage(driver);
 	  cp.clickonproject();
