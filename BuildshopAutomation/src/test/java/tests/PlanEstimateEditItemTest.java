@@ -34,8 +34,8 @@ public class PlanEstimateEditItemTest extends SuperTest
 	  ep.clickonaddtoscope();
 	  ep.clickonaddtoschedule();
 	  ep.clickonsaveestimate();
-	  ep.clickonestimate();
-	  ep.clickonediticon();
-	  ep.clickondeleteEstimate();
+//	  ep.clickonestimate();
+//	  ep.clickonediticon();
+//	  ep.clickondeleteEstimate();
   }
 }

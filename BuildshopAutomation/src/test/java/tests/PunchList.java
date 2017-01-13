@@ -6,9 +6,8 @@ import pages.MainPage;
 import pages.ManageDashboardPage;
 import pages.ManageHomePage;
 import pages.PunchListPage;
-import pages.ScheduleSubModulesPage;
 import pages.SignInPage;
-import pages.ToDoListPage;
+
 
 public class PunchList extends BaseClass 
 {
@@ -27,11 +26,11 @@ public class PunchList extends BaseClass
 	      ManageDashboardPage d=new ManageDashboardPage(driver);
 	      d.ManageDashboardMethod();
 	      
-	      ScheduleSubModulesPage ssmp= new ScheduleSubModulesPage(driver);
-	      ssmp.ScheduleSubModulesMethod();
+//	      ScheduleSubModulesPage ssmp= new ScheduleSubModulesPage(driver);
+//	      ssmp.ScheduleSubModulesMethod();
 	      
-	      ToDoListPage tdlp=new ToDoListPage(driver);
-	      tdlp.ToDoListMethod();
+//	      ToDoListPage tdlp=new ToDoListPage(driver);
+//	      tdlp.ToDoListMethod();
 	      
 	      /*PhotosPage pp=new PhotosPage(driver);
 	      pp.PhotosMethod();

@@ -28,16 +28,16 @@ public class PlanEstimateTest extends SuperTest
 	  
 	  EstimatePage ep=new EstimatePage(driver);
 	  ep.clickonestimate();
-//	  ep.enterItemNumber("15");
-//	  ep.enterDescription("marbels");
-//	  ep.clickonadd();
+	  ep.enterItemNumber("15");
+	  ep.enterDescription("marbels");
+	  ep.clickonadd();
 	  ep.searchforEstimate("marbels");
 	  ep.clickonsearchbutton();
-//	  ep.clickonadditem(3);
-	  ep.clickonPlayIcon();
+	  ep.clickonadditem(3);
+//	  ep.clickonPlayIcon();
 //	  ep.enterItemDescription("item 1");
 //	  ep.enteritemUnit(4);
-	  ep.clickonDeleteIcon();
+//	  ep.clickonDeleteIcon();
 	  
 //	  ep.pagenum("2");
 //	  ep.clickonadditem(5);

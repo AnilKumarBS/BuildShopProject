@@ -11,7 +11,7 @@ import pages.WelcomePage;
 public class ProcureMaterial extends SuperTest 
 {
   @Test
-  public void addItem() 
+  public void addItem() throws InterruptedException 
   {
 	  WelcomePage wp= new WelcomePage(driver);
 	  wp.clickSignIn();
@@ -27,14 +27,18 @@ public class ProcureMaterial extends SuperTest
 	  
 	  ProcurePage pp=new ProcurePage(driver);
 	  pp.clickonMaterial();
+	  pp.selectMatType();
 	  pp.clickonaddItem();
-	  pp.selectamaterial(5);
+	  pp.selectamaterial(18);
 	  pp.materialDescription("nice quality");
 	  pp.enterQuantity("5");
 	  pp.selectUnit(3);
 	  pp.clickonMatSave();
+	  pp.clickonMaterial();
 	  pp.selectMatType();
-	  pp.selectItem();
+	  pp.selectoneMaterialType();
+//	  pp.selectMatType();
+//	  pp.selectItem();
 	  pp.clickonDeleteIcon();
 	  pp.clickonconfirmdeleteItem();
   }

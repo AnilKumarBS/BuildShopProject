@@ -28,19 +28,19 @@ public class ProcureTest extends SuperTest
 	  
 	  ProcurePage pp=new ProcurePage(driver);
 	  pp.clickOnBids();
-//	  pp.clickonstartdate();
-//	  pp.selectdate();
-//	  pp.clickonenddate("03/20/2017");
-//	  pp.selecttype(12);
-//	  pp.companyname("FR");
-//	  pp.enterAmount("1000");
-//	  pp.clickonAdd();
+	  pp.clickonstartdate();
+	  pp.selectdate();
+	  pp.clickonenddate("03/20/2017");
+	  pp.selecttype(12);
+	  pp.companyname("DSM Company");
+	  pp.enterAmount("1000");
+	  pp.clickonAdd();
 	  pp.agreement();
-//	  pp.clickonEmail();
-//	  pp.enterEmailID("rakeshsb313@gmail.com");
-//	  pp.enterSubject("agreement");
-//	  pp.enterBody("home agreement");
-//	  pp.clickonsend();
-	  pp.clickondownload();
+	  pp.clickonEmail();
+	  pp.enterEmailID("rakeshsb313@gmail.com");
+	  pp.enterSubject("agreement");
+	  pp.enterBody("home agreement");
+	  pp.clickonsend();
+//	  pp.clickondownload();
   }
 }

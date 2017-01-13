@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;
@@ -19,14 +20,15 @@ public class SuperTest
 		FirefoxProfile prof = new FirefoxProfile();
 		prof.setPreference("browser.helperApps.neverAsk.saveToDisk","application/pdf");
 		driver=new FirefoxDriver(prof);
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("http://sv9487.si-servers.com/");
 	}
 
-//  @AfterClass
-//  public void afterClass() 
-//  {
-//	  driver.close();
-//  }
+  @AfterClass
+  public void afterClass() 
+  {
+	  driver.close();
+  }
 
 }
