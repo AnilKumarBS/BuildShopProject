@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -120,16 +120,26 @@ public WebDriver driver;
 		Thread.sleep(2000);
 		newMessageButton.click();
 		Thread.sleep(2000);
+		newMessageViewContactsLink.click();
+		Thread.sleep(2000);
+		newMessageViewContactsSelectContactCheckBox.click();
+		Thread.sleep(1000);
 		
-		if(newMessageViewContactsLink.isDisplayed())
+		/*if(newMessageViewContactsLink.isDisplayed())
 		{
-			newMessageViewContactsSelectContactCheckBox.click();
+			
+			if(newMessageViewContactsSelectContactCheckBox.isDisplayed())
+			{
+				newMessageViewContactsLink.click();
+				Thread.sleep(1000);
+				newMessageViewContactsSelectContactCheckBox.click();
+			}
 		}
 		else
 		{
 			newMessageViewContactsLink.click();
 			newMessageViewTeamSelectContactCheckBox.click();
-		}
+		}*/
 		newMessageSelectProjectCheckBox.click();
 		Thread.sleep(2000);
 		String  newMessageTopicText= ExcelLibrary.getExcelData("datafile.xls","Messages",4,3);

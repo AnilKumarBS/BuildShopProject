@@ -421,7 +421,7 @@ public class Field360Quotes
 	
 	//Delete Quote......
 	
-	@FindBy(xpath="//span[contains(text(),'aaaaNewCustomer12')]/../../preceding-sibling::td[last()]/input")
+	@FindBy(xpath="//span[contains(text(),'aaaaNewCustomer12')]/../../..//input")
 	private WebElement quoteChkbox;
 	
 	@FindBy(xpath="//input[@id='ctl00_MainContent_btnDelete']")

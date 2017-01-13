@@ -48,10 +48,10 @@ public class EstimatePage
 	@FindBy(xpath="//select[@id='ctl00_MainContent_DataPagerGridView1_ctl02_GridView1_ctl02_Unit']")
 	private WebElement itemUnit;
 	
-	@FindBy(id="ctl00_MainContent_DataPagerGridView1_ctl02_GridView1_ctl06_imgEdit")
+	@FindBy(xpath="//table[@class='hundred-percent']//img[@id='ctl00_MainContent_DataPagerGridView1_ctl02_imgEditSum']")
 	private WebElement delItem;
 	
-	@FindBy(id="ctl00_MainContent_DataPagerGridView1_ctl02_GridView1_ctl06_LinkButton2")
+	@FindBy(xpath="//table[@class='hundred-percent']//input[@id='ctl00_MainContent_DataPagerGridView1_ctl02_btnDelete']")
 	private WebElement selDelete;
 	
 	@FindBy(id="ctl00_MainContent_btnQuote")
@@ -119,6 +119,9 @@ public class EstimatePage
 	
 	@FindBy(id="ctl00_MainContent_DataPagerGridView1_ctl02_btnDelete")
 	private WebElement deleteEstimate;
+	
+	@FindBy(id="ctl00_MainContent_btnBack")
+	private WebElement doneediting;
 	
 	WebDriver driver;
 	
@@ -294,6 +297,7 @@ public class EstimatePage
 	 public void clickonsaveestimate()
 	 {
 		 saveEditedstimate.click();
+		 doneediting.click();
 	 }
 	 public void clickondeleteEstimate()
 	 {

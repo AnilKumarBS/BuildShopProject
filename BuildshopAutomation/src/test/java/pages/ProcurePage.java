@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import libraries.GenericUtils;
 
-public class ProcurePage 
+public class ProcurePage
 {
 	WebDriver driver;
 	//click on Bids
@@ -43,7 +43,7 @@ public class ProcurePage
 	private WebElement add;
 	
 	//click on aggregate
-	@FindBy(xpath="//span[text()='TYss']/../..//img[@src='../Images/View.gif']")
+	@FindBy(xpath="//span[text()='FR']/../..//img[@src='../Images/View.gif']")
 	private WebElement agr;
 	
 	//email
@@ -315,7 +315,7 @@ public class ProcurePage
 	
 	//***************************Material************************************************
 	//click on material type
-	@FindBy(xpath="//a[text()='General']")
+	@FindBy(xpath="//a[text()='Framing']")
 	private WebElement matType;
 	
 	//select item
@@ -323,7 +323,7 @@ public class ProcurePage
 	private WebElement selectitem;
 	
 	//click on delete item icon
-	@FindBy(id="ctl00_MainContent_btnDelete")
+	@FindBy(xpath="//input[@id='ctl00_MainContent_btnDelete']")
 	private WebElement deleteitemIcon;
 	
 	//confirm delete item
@@ -331,7 +331,8 @@ public class ProcurePage
 	private WebElement confirmdeleteItem;
 	
 	//select any material list
-	@FindBy(xpath="//a[text()='Doors']")
+	//@FindBy(xpath="//a[text()='Doors']")
+	@FindBy(id="ctl00_MainContent_GridView1_ctl02_cbRows")
 	private WebElement selectMaterialtype;
 	
 	//click on item
@@ -462,9 +463,11 @@ public class ProcurePage
 	}
 	
 	//click on download
-	public void clickondownload()
+	public  void clickondownload()
 	{
 		download.click();
+		
+		
 	}
 	
 	//click on checkbox
@@ -831,12 +834,14 @@ public class ProcurePage
 	public void clickonMatSave()
 	{
 		matSave.click();
+		editDone.click();
 	}
 	//*****************************************material methods*******************************************
 	//select material type
-	public void selectMatType()
+	public void selectMatType() throws InterruptedException
 	{
 		matType.click();
+		Thread.sleep(2000);
 	}
 	//select item
 	public void selectItem()
@@ -856,7 +861,7 @@ public class ProcurePage
 	//select any material
 	public void selectoneMaterialType()
 	{
-		selectMaterialtype.click();
+		selectMaterialtype.click();		
 	}
 	//click on item
 	public void clickonitem()
